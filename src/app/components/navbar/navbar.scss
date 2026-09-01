@@ -11,7 +11,7 @@
 
   z-index: 1000;
 
-  height: 76px;
+  height: 92px;
 
   padding: 0 5%;
 
@@ -24,8 +24,8 @@
   background:
     linear-gradient(
       180deg,
-      rgba(3, 3, 5, 0.94),
-      rgba(3, 3, 5, 0.65)
+      rgba(3, 3, 5, 0.96),
+      rgba(3, 3, 5, 0.72)
     );
 
   border-bottom:
@@ -34,6 +34,20 @@
 
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
+}
+
+
+/* =====================================================
+   LOGO + DESIGNER CREDIT
+   ===================================================== */
+
+.brand-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+
+  min-width: 220px;
 }
 
 
@@ -49,6 +63,7 @@
   text-decoration: none;
 
   font-size: 22px;
+  line-height: 1;
 
   font-weight: 900;
 
@@ -59,6 +74,7 @@
     text-shadow 0.3s ease;
 }
 
+
 .logo span {
   color: #ff3030;
 
@@ -66,12 +82,57 @@
     color 0.3s ease;
 }
 
+
 .logo:hover {
   transform: translateY(-1px);
 
   text-shadow:
     0 0 20px
     rgba(255, 40, 50, 0.35);
+}
+
+
+.logo:hover span {
+  color: #ff5a5a;
+}
+
+
+/* =====================================================
+   DESIGNER CREDIT
+   ===================================================== */
+
+.designer-credit {
+  margin-top: 7px;
+
+  color:
+    rgba(255, 255, 255, 0.58);
+
+  font-size: 8px;
+
+  font-weight: 900;
+
+  letter-spacing: 1.8px;
+
+  line-height: 1;
+
+  white-space: nowrap;
+
+  text-shadow:
+    0 0 12px
+    rgba(255, 48, 48, 0.22);
+
+  transition:
+    color 0.3s ease,
+    text-shadow 0.3s ease;
+}
+
+
+.brand-block:hover .designer-credit {
+  color: #ffffff;
+
+  text-shadow:
+    0 0 15px
+    rgba(255, 48, 48, 0.35);
 }
 
 
@@ -86,6 +147,7 @@
 
   gap: 34px;
 }
+
 
 .nav-links a {
   position: relative;
@@ -105,15 +167,18 @@
     color 0.3s ease;
 }
 
+
 .nav-links a::after {
   content: "";
 
   position: absolute;
 
   left: 50%;
+
   bottom: -9px;
 
   width: 0;
+
   height: 2px;
 
   border-radius: 999px;
@@ -136,9 +201,11 @@
     width 0.3s ease;
 }
 
+
 .nav-links a:hover {
   color: #ffffff;
 }
+
 
 .nav-links a:hover::after {
   width: 22px;
@@ -192,12 +259,14 @@
     border-color 0.3s ease;
 }
 
+
 .nav-button span {
   font-size: 16px;
 
   transition:
     transform 0.3s ease;
 }
+
 
 .nav-button:hover {
   transform: translateY(-2px);
@@ -209,6 +278,7 @@
     0 12px 40px
     rgba(225, 30, 50, 0.4);
 }
+
 
 .nav-button:hover span {
   transform:
@@ -230,6 +300,7 @@
 
   align-items: center;
   justify-content: center;
+
   flex-direction: column;
 
   gap: 5px;
@@ -250,6 +321,7 @@
     border-color 0.3s ease;
 }
 
+
 .mobile-menu-button span {
   display: block;
 
@@ -264,6 +336,7 @@
     transform 0.3s ease,
     opacity 0.3s ease;
 }
+
 
 .mobile-menu-button:hover {
   background:
@@ -290,16 +363,18 @@
 @media (max-width: 800px) {
 
   .navbar {
-    height: 68px;
+    height: 80px;
 
     padding: 0 20px;
   }
 
-  /* Hide desktop links */
+
+  /* Hide desktop navigation */
 
   .nav-links {
     display: none;
   }
+
 
   /* Hide desktop button */
 
@@ -307,11 +382,27 @@
     display: none;
   }
 
-  /* Logo */
+
+  /* Brand */
+
+  .brand-block {
+    min-width: 0;
+  }
+
 
   .logo {
     font-size: 20px;
   }
+
+
+  .designer-credit {
+    margin-top: 6px;
+
+    font-size: 7px;
+
+    letter-spacing: 1.4px;
+  }
+
 
   /* Show hamburger */
 
@@ -319,9 +410,10 @@
     display: flex;
   }
 
-  /* ===============================
+
+  /* =================================================
      HAMBURGER → X
-     =============================== */
+     ================================================= */
 
   .mobile-menu-button.active span:nth-child(1) {
     transform:
@@ -329,9 +421,11 @@
       rotate(45deg);
   }
 
+
   .mobile-menu-button.active span:nth-child(2) {
     opacity: 0;
   }
+
 
   .mobile-menu-button.active span:nth-child(3) {
     transform:
@@ -340,14 +434,14 @@
   }
 
 
-  /* ===============================
+  /* =================================================
      MOBILE DROPDOWN
-     =============================== */
+     ================================================= */
 
   .mobile-menu {
     position: fixed;
 
-    top: 78px;
+    top: 90px;
 
     left: 20px;
     right: 20px;
@@ -399,9 +493,9 @@
   }
 
 
-  /* ===============================
+  /* =================================================
      OPEN MENU
-     =============================== */
+     ================================================= */
 
   .mobile-menu.open {
     opacity: 1;
@@ -416,9 +510,9 @@
   }
 
 
-  /* ===============================
+  /* =================================================
      MOBILE LINKS
-     =============================== */
+     ================================================= */
 
   .mobile-menu a {
     display: flex;
@@ -452,6 +546,7 @@
       transform 0.25s ease;
   }
 
+
   .mobile-menu a span {
     min-width: 22px;
 
@@ -465,6 +560,7 @@
     letter-spacing: 1px;
   }
 
+
   .mobile-menu a:hover,
   .mobile-menu a:active {
     color: #ffffff;
@@ -475,7 +571,6 @@
     transform:
       translateX(3px);
   }
-
 }
 
 
@@ -489,13 +584,21 @@
     padding: 0 16px;
   }
 
+
   .logo {
     font-size: 19px;
   }
+
+
+  .designer-credit {
+    font-size: 6.5px;
+
+    letter-spacing: 1.2px;
+  }
+
 
   .mobile-menu {
     left: 14px;
     right: 14px;
   }
-
 }

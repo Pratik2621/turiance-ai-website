@@ -1,15 +1,30 @@
 <nav class="navbar">
 
-  <!-- LOGO -->
-  <a
-    href="#top"
-    class="logo"
-    (click)="closeMobileMenu($event)"
-  >
-    HERO<span>VERSE</span>
-  </a>
+  <!-- =====================================================
+       LOGO + DESIGNER CREDIT
+       ===================================================== -->
 
-  <!-- DESKTOP NAVIGATION -->
+  <div class="brand-block">
+
+    <a
+      href="#top"
+      class="logo"
+      (click)="closeMobileMenu($event)"
+    >
+      HERO<span>VERSE</span>
+    </a>
+
+    <div class="designer-credit">
+      DESIGNED BY — PRATIK POTE
+    </div>
+
+  </div>
+
+
+  <!-- =====================================================
+       DESKTOP NAVIGATION
+       ===================================================== -->
+
   <div class="nav-links">
 
     <a
@@ -42,7 +57,11 @@
 
   </div>
 
-  <!-- ENTER UNIVERSE -->
+
+  <!-- =====================================================
+       ENTER UNIVERSE
+       ===================================================== -->
+
   <a
     href="#universe"
     class="nav-button"
@@ -52,7 +71,11 @@
     <span>→</span>
   </a>
 
-  <!-- MOBILE MENU BUTTON -->
+
+  <!-- =====================================================
+       MOBILE MENU BUTTON
+       ===================================================== -->
+
   <button
     type="button"
     class="mobile-menu-button"
@@ -69,7 +92,10 @@
 </nav>
 
 
-<!-- MOBILE MENU -->
+<!-- =====================================================
+     MOBILE MENU
+     ===================================================== -->
+
 <div
   class="mobile-menu"
   [class.open]="mobileMenuOpen"
