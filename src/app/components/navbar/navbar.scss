@@ -1,0 +1,501 @@
+/* =====================================================
+   HERO VERSE — NAVBAR
+   ===================================================== */
+
+.navbar {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+  right: 0;
+
+  z-index: 1000;
+
+  height: 76px;
+
+  padding: 0 5%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  box-sizing: border-box;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(3, 3, 5, 0.94),
+      rgba(3, 3, 5, 0.65)
+    );
+
+  border-bottom:
+    1px solid
+    rgba(255, 255, 255, 0.07);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+
+/* =====================================================
+   LOGO
+   ===================================================== */
+
+.logo {
+  position: relative;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 22px;
+
+  font-weight: 900;
+
+  letter-spacing: -1px;
+
+  transition:
+    transform 0.3s ease,
+    text-shadow 0.3s ease;
+}
+
+.logo span {
+  color: #ff3030;
+
+  transition:
+    color 0.3s ease;
+}
+
+.logo:hover {
+  transform: translateY(-1px);
+
+  text-shadow:
+    0 0 20px
+    rgba(255, 40, 50, 0.35);
+}
+
+
+/* =====================================================
+   DESKTOP NAVIGATION
+   ===================================================== */
+
+.nav-links {
+  display: flex;
+
+  align-items: center;
+
+  gap: 34px;
+}
+
+.nav-links a {
+  position: relative;
+
+  color:
+    rgba(255, 255, 255, 0.58);
+
+  text-decoration: none;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.5px;
+
+  transition:
+    color 0.3s ease;
+}
+
+.nav-links a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  bottom: -9px;
+
+  width: 0;
+  height: 2px;
+
+  border-radius: 999px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #ff3030,
+      #ff8c35
+    );
+
+  transform:
+    translateX(-50%);
+
+  box-shadow:
+    0 0 10px
+    rgba(255, 40, 50, 0.6);
+
+  transition:
+    width 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #ffffff;
+}
+
+.nav-links a:hover::after {
+  width: 22px;
+}
+
+
+/* =====================================================
+   ENTER UNIVERSE BUTTON
+   ===================================================== */
+
+.nav-button {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  min-height: 42px;
+
+  padding: 0 18px;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.14);
+
+  border-radius: 999px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(225, 30, 50, 0.9),
+      rgba(110, 40, 190, 0.9)
+    );
+
+  box-shadow:
+    0 8px 30px
+    rgba(220, 25, 50, 0.2);
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.nav-button span {
+  font-size: 16px;
+
+  transition:
+    transform 0.3s ease;
+}
+
+.nav-button:hover {
+  transform: translateY(-2px);
+
+  border-color:
+    rgba(255, 255, 255, 0.3);
+
+  box-shadow:
+    0 12px 40px
+    rgba(225, 30, 50, 0.4);
+}
+
+.nav-button:hover span {
+  transform:
+    translateX(4px);
+}
+
+
+/* =====================================================
+   MOBILE MENU BUTTON
+   ===================================================== */
+
+.mobile-menu-button {
+  display: none;
+
+  width: 42px;
+  height: 42px;
+
+  padding: 0;
+
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  gap: 5px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.12);
+
+  border-radius: 12px;
+
+  background:
+    rgba(255, 255, 255, 0.04);
+
+  cursor: pointer;
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.mobile-menu-button span {
+  display: block;
+
+  width: 18px;
+  height: 2px;
+
+  border-radius: 999px;
+
+  background: #ffffff;
+
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.mobile-menu-button:hover {
+  background:
+    rgba(255, 255, 255, 0.08);
+
+  border-color:
+    rgba(255, 255, 255, 0.25);
+}
+
+
+/* =====================================================
+   MOBILE MENU
+   ===================================================== */
+
+.mobile-menu {
+  display: none;
+}
+
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 800px) {
+
+  .navbar {
+    height: 68px;
+
+    padding: 0 20px;
+  }
+
+  /* Hide desktop links */
+
+  .nav-links {
+    display: none;
+  }
+
+  /* Hide desktop button */
+
+  .navbar > .nav-button {
+    display: none;
+  }
+
+  /* Logo */
+
+  .logo {
+    font-size: 20px;
+  }
+
+  /* Show hamburger */
+
+  .mobile-menu-button {
+    display: flex;
+  }
+
+  /* ===============================
+     HAMBURGER → X
+     =============================== */
+
+  .mobile-menu-button.active span:nth-child(1) {
+    transform:
+      translateY(7px)
+      rotate(45deg);
+  }
+
+  .mobile-menu-button.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .mobile-menu-button.active span:nth-child(3) {
+    transform:
+      translateY(-7px)
+      rotate(-45deg);
+  }
+
+
+  /* ===============================
+     MOBILE DROPDOWN
+     =============================== */
+
+  .mobile-menu {
+    position: fixed;
+
+    top: 78px;
+
+    left: 20px;
+    right: 20px;
+
+    z-index: 999;
+
+    display: flex;
+
+    flex-direction: column;
+
+    padding: 10px;
+
+    box-sizing: border-box;
+
+    border:
+      1px solid
+      rgba(255, 255, 255, 0.1);
+
+    border-radius: 18px;
+
+    background:
+      linear-gradient(
+        145deg,
+        rgba(15, 15, 20, 0.98),
+        rgba(5, 5, 8, 0.98)
+      );
+
+    box-shadow:
+      0 25px 70px
+      rgba(0, 0, 0, 0.65);
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform:
+      translateY(-12px)
+      scale(0.98);
+
+    pointer-events: none;
+
+    transition:
+      opacity 0.3s ease,
+      visibility 0.3s ease,
+      transform 0.3s ease;
+  }
+
+
+  /* ===============================
+     OPEN MENU
+     =============================== */
+
+  .mobile-menu.open {
+    opacity: 1;
+
+    visibility: visible;
+
+    transform:
+      translateY(0)
+      scale(1);
+
+    pointer-events: auto;
+  }
+
+
+  /* ===============================
+     MOBILE LINKS
+     =============================== */
+
+  .mobile-menu a {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    min-height: 52px;
+
+    padding: 0 16px;
+
+    box-sizing: border-box;
+
+    color:
+      rgba(255, 255, 255, 0.65);
+
+    text-decoration: none;
+
+    border-radius: 12px;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.5px;
+
+    transition:
+      color 0.25s ease,
+      background 0.25s ease,
+      transform 0.25s ease;
+  }
+
+  .mobile-menu a span {
+    min-width: 22px;
+
+    color:
+      rgba(255, 70, 70, 0.7);
+
+    font-size: 9px;
+
+    font-weight: 900;
+
+    letter-spacing: 1px;
+  }
+
+  .mobile-menu a:hover,
+  .mobile-menu a:active {
+    color: #ffffff;
+
+    background:
+      rgba(255, 255, 255, 0.06);
+
+    transform:
+      translateX(3px);
+  }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+   ===================================================== */
+
+@media (max-width: 420px) {
+
+  .navbar {
+    padding: 0 16px;
+  }
+
+  .logo {
+    font-size: 19px;
+  }
+
+  .mobile-menu {
+    left: 14px;
+    right: 14px;
+  }
+
+}

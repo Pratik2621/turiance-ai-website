@@ -1,0 +1,517 @@
+/* =====================================================
+   HERO VERSE — FOOTER
+   ===================================================== */
+
+.footer {
+  position: relative;
+
+  width: 100%;
+
+  padding: 90px 6% 25px;
+
+  box-sizing: border-box;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(225, 30, 50, 0.08),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 85% 70%,
+      rgba(120, 60, 255, 0.08),
+      transparent 30%
+    ),
+    #030305;
+
+  color: #ffffff;
+}
+
+
+/* =====================================================
+   TOP DIVIDER
+   ===================================================== */
+
+.footer-divider {
+  position: absolute;
+
+  top: 0;
+  left: 8%;
+  right: 8%;
+
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.16),
+      transparent
+    );
+}
+
+
+/* =====================================================
+   MAIN
+   ===================================================== */
+
+.footer-main {
+  width: min(1200px, 100%);
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    1.8fr
+    1fr
+    1fr
+    1fr;
+
+  gap: 60px;
+}
+
+
+/* =====================================================
+   BRAND
+   ===================================================== */
+
+.footer-brand {
+  max-width: 330px;
+}
+
+.footer-logo {
+  display: inline-block;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 26px;
+
+  line-height: 1;
+
+  font-weight: 900;
+
+  letter-spacing: -1.5px;
+
+  transition:
+    transform 0.3s ease,
+    text-shadow 0.3s ease;
+}
+
+.footer-logo span {
+  color: #ff3030;
+
+  transition:
+    color 0.3s ease;
+}
+
+.footer-logo:hover {
+  transform: translateY(-2px);
+
+  text-shadow:
+    0 0 25px
+    rgba(255, 40, 50, 0.45);
+}
+
+.footer-logo:hover span {
+  color: #ff5a5a;
+}
+
+.footer-brand p {
+  margin: 20px 0 24px;
+
+  max-width: 310px;
+
+  color:
+    rgba(255, 255, 255, 0.42);
+
+  font-size: 13px;
+
+  line-height: 1.8;
+}
+
+
+/* =====================================================
+   ONLINE STATUS
+   ===================================================== */
+
+.footer-status {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  color:
+    rgba(255, 255, 255, 0.35);
+
+  font-size: 8px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+.footer-status i {
+  display: block;
+
+  width: 7px;
+  height: 7px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #35e879;
+
+  box-shadow:
+    0 0 12px
+    rgba(53, 232, 121, 0.75);
+
+  animation:
+    statusPulse 2s ease-in-out infinite;
+}
+
+
+@keyframes statusPulse {
+
+  0%,
+  100% {
+    opacity: 0.6;
+
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+
+    transform: scale(1.25);
+  }
+
+}
+
+
+/* =====================================================
+   FOOTER COLUMNS
+   ===================================================== */
+
+.footer-column {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  gap: 14px;
+}
+
+
+/* =====================================================
+   COLUMN TITLE
+   ===================================================== */
+
+.footer-title {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color:
+    rgba(255, 255, 255, 0.3);
+
+  font-size: 9px;
+
+  font-weight: 900;
+
+  letter-spacing: 2.5px;
+}
+
+
+/* =====================================================
+   COLUMN LINKS
+   ===================================================== */
+
+.footer-column a {
+  position: relative;
+
+  display: inline-block;
+
+  color:
+    rgba(255, 255, 255, 0.52);
+
+  text-decoration: none;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.footer-column a:hover {
+  color: #ffffff;
+
+  transform: translateX(5px);
+}
+
+
+/* =====================================================
+   BOTTOM
+   ===================================================== */
+
+.footer-bottom {
+  width: min(1200px, 100%);
+
+  margin: 65px auto 0;
+
+  padding-top: 22px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  border-top:
+    1px solid
+    rgba(255, 255, 255, 0.07);
+
+  color:
+    rgba(255, 255, 255, 0.25);
+
+  font-size: 8px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+}
+
+
+/* HERO VERSE RED */
+
+.footer-bottom > span:first-child span {
+  color: #ff3030;
+}
+
+
+/* =====================================================
+   BACK TO TOP
+   ===================================================== */
+
+.back-to-top {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 40px;
+  height: 40px;
+
+  flex-shrink: 0;
+
+  padding: 0;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.12);
+
+  border-radius: 50%;
+
+  background:
+    rgba(255, 255, 255, 0.04);
+
+  color: #ffffff;
+
+  font-size: 18px;
+
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.back-to-top:hover {
+  transform: translateY(-4px);
+
+  background:
+    rgba(225, 30, 50, 0.85);
+
+  border-color:
+    rgba(255, 80, 80, 0.7);
+
+  box-shadow:
+    0 10px 30px
+    rgba(225, 30, 50, 0.35);
+}
+
+.back-to-top:active {
+  transform: translateY(-1px) scale(0.96);
+}
+
+
+/* =====================================================
+   FOCUS ACCESSIBILITY
+   ===================================================== */
+
+.footer a:focus-visible,
+.back-to-top:focus-visible {
+  outline: 2px solid #ff4545;
+
+  outline-offset: 4px;
+}
+
+
+/* =====================================================
+   TABLET
+   ===================================================== */
+
+@media (max-width: 1000px) {
+
+  .footer-main {
+    grid-template-columns:
+      1.5fr
+      1fr
+      1fr;
+
+    gap: 45px 35px;
+  }
+
+  .footer-brand {
+    grid-column: span 3;
+
+    max-width: 500px;
+  }
+
+}
+
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 800px) {
+
+  .footer {
+    padding: 75px 20px 25px;
+  }
+
+  .footer-divider {
+    left: 20px;
+    right: 20px;
+  }
+
+  .footer-main {
+    grid-template-columns:
+      1fr 1fr;
+
+    gap: 45px 30px;
+  }
+
+  .footer-brand {
+    grid-column: span 2;
+
+    max-width: 100%;
+  }
+
+  .footer-brand p {
+    max-width: 500px;
+  }
+
+  .footer-bottom {
+    margin-top: 50px;
+  }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+   ===================================================== */
+
+@media (max-width: 480px) {
+
+  .footer {
+    padding: 65px 20px 22px;
+  }
+
+  .footer-main {
+    grid-template-columns: 1fr;
+
+    gap: 35px;
+  }
+
+  .footer-brand {
+    grid-column: auto;
+  }
+
+  .footer-brand p {
+    font-size: 12px;
+
+    line-height: 1.7;
+  }
+
+  .footer-column {
+    gap: 12px;
+  }
+
+  .footer-title {
+    margin-bottom: 5px;
+  }
+
+  .footer-column a {
+    font-size: 11px;
+  }
+
+  .footer-bottom {
+    margin-top: 45px;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    text-align: center;
+
+    line-height: 1.8;
+  }
+
+  .back-to-top {
+    width: 42px;
+    height: 42px;
+  }
+
+}
+
+
+/* =====================================================
+   VERY SMALL MOBILE
+   ===================================================== */
+
+@media (max-width: 360px) {
+
+  .footer {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .footer-divider {
+    left: 16px;
+    right: 16px;
+  }
+
+  .footer-logo {
+    font-size: 23px;
+  }
+
+}

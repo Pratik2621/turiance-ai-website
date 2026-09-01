@@ -1,0 +1,110 @@
+<nav class="navbar">
+
+  <!-- LOGO -->
+  <a
+    href="#top"
+    class="logo"
+    (click)="closeMobileMenu($event)"
+  >
+    HERO<span>VERSE</span>
+  </a>
+
+  <!-- DESKTOP NAVIGATION -->
+  <div class="nav-links">
+
+    <a
+      href="#heroes"
+      (click)="closeMobileMenu($event)"
+    >
+      Heroes
+    </a>
+
+    <a
+      href="#battles"
+      (click)="closeMobileMenu($event)"
+    >
+      Battles
+    </a>
+
+    <a
+      href="#gallery"
+      (click)="closeMobileMenu($event)"
+    >
+      Gallery
+    </a>
+
+    <a
+      href="#universe"
+      (click)="closeMobileMenu($event)"
+    >
+      Universe
+    </a>
+
+  </div>
+
+  <!-- ENTER UNIVERSE -->
+  <a
+    href="#universe"
+    class="nav-button"
+    (click)="closeMobileMenu($event)"
+  >
+    Enter Universe
+    <span>→</span>
+  </a>
+
+  <!-- MOBILE MENU BUTTON -->
+  <button
+    type="button"
+    class="mobile-menu-button"
+    [class.active]="mobileMenuOpen"
+    (click)="toggleMobileMenu()"
+    [attr.aria-expanded]="mobileMenuOpen"
+    aria-label="Toggle navigation menu"
+  >
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+</nav>
+
+
+<!-- MOBILE MENU -->
+<div
+  class="mobile-menu"
+  [class.open]="mobileMenuOpen"
+>
+
+  <a
+    href="#heroes"
+    (click)="closeMobileMenu($event)"
+  >
+    <span>01</span>
+    Heroes
+  </a>
+
+  <a
+    href="#battles"
+    (click)="closeMobileMenu($event)"
+  >
+    <span>02</span>
+    Battles
+  </a>
+
+  <a
+    href="#gallery"
+    (click)="closeMobileMenu($event)"
+  >
+    <span>03</span>
+    Gallery
+  </a>
+
+  <a
+    href="#universe"
+    (click)="closeMobileMenu($event)"
+  >
+    <span>04</span>
+    Universe
+  </a>
+
+</div>

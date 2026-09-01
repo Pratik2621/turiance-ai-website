@@ -1,0 +1,138 @@
+<section class="battles" id="battles">
+
+  <!-- HEADING -->
+
+  <div class="battles-heading">
+
+    <span class="section-label">
+      BATTLE ARCHIVE
+    </span>
+
+    <h2>
+      Choose your
+      <span>fighter.</span>
+    </h2>
+
+    <p>
+      Two legends. One battlefield.
+      Discover the battles that define the HeroVerse.
+    </p>
+
+  </div>
+
+
+  <!-- BATTLE -->
+
+  <div class="battle-card">
+
+    <!-- DEADPOOL -->
+
+    <div class="fighter fighter-deadpool">
+
+      <div class="fighter-glow"></div>
+
+      <img
+        src="/Images/Hero/Gamescom_2023_-_Cosplay_Deadpool.jpg"
+        alt="Deadpool"
+      />
+
+      <div class="fighter-info">
+
+        <span>
+          01 / HERO
+        </span>
+
+        <h3>
+          Deadpool
+        </h3>
+
+        <p>
+          THE MERC WITH A MOUTH
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <!-- VS -->
+
+    <div class="battle-vs">
+
+      <span>VS</span>
+
+    </div>
+
+
+    <!-- WOLVERINE -->
+
+    <div class="fighter fighter-wolverine">
+
+      <div class="fighter-glow"></div>
+
+      <img
+        src="/Images/Hero/wolverine_images.jpg"
+        alt="Wolverine"
+      />
+
+      <div class="fighter-info">
+
+        <span>
+          02 / MUTANT
+        </span>
+
+        <h3>
+          Wolverine
+        </h3>
+
+        <p>
+          THE RELENTLESS WARRIOR
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- BATTLE FOOTER -->
+
+  <div class="battle-footer">
+
+  <div class="battle-footer-text">
+
+    <span>
+      WHO WILL STAND?
+    </span>
+
+    <strong>
+      THE BATTLE BEGINS.
+    </strong>
+
+  </div>
+
+
+  <button
+    type="button"
+    class="battle-button"
+    (click)="startBattle()"
+  >
+    ENTER BATTLE
+    <span>→</span>
+  </button>
+
+</div>
+
+
+<!-- BATTLE MESSAGE -->
+
+@if (battleStarted) {
+  <div class="battle-message">
+    ⚔ BATTLE INITIATED — DEADPOOL VS WOLVERINE
+  </div>
+}
+
+
+
+</section>

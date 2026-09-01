@@ -1,0 +1,30 @@
+/* =====================================================
+   HERO VERSE — GLOBAL SCROLL
+   ===================================================== */
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+/* =====================================================
+   HERO VERSE — GLOBAL LAYOUT
+   ===================================================== */
+
+:host {
+  display: block;
+  min-height: 100vh;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+}

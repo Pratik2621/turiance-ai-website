@@ -1,0 +1,1482 @@
+/* =====================================================
+   HERO VERSE — HEROES + CHARACTER DATABASE
+   CINEMATIC COMIC STYLE
+   ===================================================== */
+
+.heroes {
+  position: relative;
+  padding: 140px 6%;
+  overflow: hidden;
+  color: #ffffff;
+  background:
+    radial-gradient(
+      circle at 15% 45%,
+      rgba(220, 25, 40, 0.12),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 85% 55%,
+      rgba(120, 65, 255, 0.10),
+      transparent 30%
+    ),
+    #050508;
+}
+
+
+/* =====================================================
+   SECTION HEADING
+   ===================================================== */
+
+.section-heading {
+  width: min(720px, 100%);
+  margin: 0 auto 70px;
+  text-align: center;
+}
+
+.section-label {
+  display: inline-block;
+  margin-bottom: 18px;
+
+  color: #ff4545;
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+
+.section-heading h2 {
+  margin: 0;
+
+  font-size: clamp(45px, 6vw, 78px);
+
+  line-height: 1;
+  letter-spacing: -4px;
+}
+
+.section-heading h2 span {
+  background:
+    linear-gradient(
+      90deg,
+      #ff3030,
+      #ff8c35,
+      #ffd166,
+      #9d7aff
+    );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent;
+}
+
+.section-heading p {
+  max-width: 620px;
+
+  margin: 25px auto 0;
+
+  color: rgba(255, 255, 255, 0.5);
+
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+
+/* =====================================================
+   HERO GRID
+   ===================================================== */
+
+.hero-grid {
+  width: min(1200px, 100%);
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 20px;
+}
+
+
+/* =====================================================
+   HERO CARD
+   ===================================================== */
+
+.hero-card {
+  position: relative;
+
+  min-height: 520px;
+
+  padding: 35px;
+
+  overflow: hidden;
+
+  border-radius: 26px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.08);
+
+  background:
+    #0b0b10;
+
+  isolation: isolate;
+
+  transition:
+    transform 0.45s ease,
+    border-color 0.45s ease,
+    box-shadow 0.45s ease;
+}
+
+
+/* =====================================================
+   CARD COLORS
+   ===================================================== */
+
+.hero-red {
+  background:
+    radial-gradient(
+      circle at 50% 20%,
+      rgba(220, 20, 35, 0.32),
+      transparent 42%
+    ),
+    linear-gradient(
+      145deg,
+      #22070b,
+      #08080c 70%
+    );
+}
+
+.hero-gold {
+  background:
+    radial-gradient(
+      circle at 50% 20%,
+      rgba(240, 175, 35, 0.28),
+      transparent 42%
+    ),
+    linear-gradient(
+      145deg,
+      #211a07,
+      #08080c 70%
+    );
+}
+
+.hero-purple {
+  background:
+    radial-gradient(
+      circle at 50% 20%,
+      rgba(120, 60, 255, 0.28),
+      transparent 42%
+    ),
+    linear-gradient(
+      145deg,
+      #160d29,
+      #08080c 70%
+    );
+}
+
+
+/* =====================================================
+   CARD GLOW
+   ===================================================== */
+
+.card-glow {
+  position: absolute;
+
+  width: 280px;
+  height: 280px;
+
+  left: 50%;
+  top: 10%;
+
+  transform:
+    translateX(-50%);
+
+  border-radius: 50%;
+
+  filter: blur(70px);
+
+  opacity: 0.28;
+
+  z-index: -1;
+
+  transition:
+    transform 0.5s ease,
+    opacity 0.5s ease;
+}
+
+.hero-red .card-glow {
+  background: #ed2538;
+}
+
+.hero-gold .card-glow {
+  background: #e8ad2e;
+}
+
+.hero-purple .card-glow {
+  background: #813cff;
+}
+
+
+/* =====================================================
+   CHARACTER IMAGE
+   ===================================================== */
+
+.character-image {
+  position: absolute;
+
+  left: 50%;
+  top: 0;
+
+  width: 100%;
+  height: 100%;
+
+  transform:
+    translateX(-50%)
+    scale(1.03);
+
+  object-fit: cover;
+
+  object-position: center top;
+
+  opacity: 0.68;
+
+  z-index: -1;
+
+  transition:
+    transform 0.7s ease,
+    opacity 0.7s ease,
+    filter 0.7s ease;
+
+  -webkit-mask-image:
+    linear-gradient(
+      to bottom,
+      #000 30%,
+      #000 62%,
+      rgba(0, 0, 0, 0.75) 78%,
+      transparent 100%
+    );
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      #000 30%,
+      #000 62%,
+      rgba(0, 0, 0, 0.75) 78%,
+      transparent 100%
+    );
+}
+
+
+/* DEADPOOL IMAGE */
+
+.deadpool-image {
+  filter:
+    contrast(1.12)
+    saturate(1.2)
+    brightness(0.78)
+    drop-shadow(
+      0 0 35px
+      rgba(240, 25, 40, 0.35)
+    );
+}
+
+
+/* WOLVERINE IMAGE */
+
+.wolverine-image {
+  filter:
+    contrast(1.12)
+    saturate(1.05)
+    brightness(0.76)
+    drop-shadow(
+      0 0 35px
+      rgba(245, 185, 40, 0.3)
+    );
+}
+
+
+/* =====================================================
+   IMAGE COLOR EDGE
+   ===================================================== */
+
+.hero-red::after,
+.hero-gold::after,
+.hero-purple::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  z-index: 0;
+}
+
+.hero-red::after {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255, 20, 35, 0.16),
+      transparent 45%
+    );
+}
+
+.hero-gold::after {
+  background:
+    linear-gradient(
+      270deg,
+      rgba(255, 190, 40, 0.16),
+      transparent 45%
+    );
+}
+
+.hero-purple::after {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(130, 65, 255, 0.14),
+      transparent 50%
+    );
+}
+
+
+/* =====================================================
+   CARD NUMBER
+   ===================================================== */
+
+.hero-number {
+  position: absolute;
+
+  top: 25px;
+  right: 28px;
+
+  color:
+    rgba(255, 255, 255, 0.3);
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+
+  z-index: 3;
+}
+
+
+/* =====================================================
+   COMIC LINES
+   ===================================================== */
+
+.comic-lines {
+  position: absolute;
+
+  width: 180px;
+  height: 180px;
+
+  right: -60px;
+  bottom: 40px;
+
+  border-radius: 50%;
+
+  opacity: 0.18;
+
+  background:
+    repeating-conic-gradient(
+      from 0deg,
+      transparent 0deg 7deg,
+      rgba(255, 255, 255, 0.35) 7deg 8deg
+    );
+
+  mask-image:
+    radial-gradient(
+      circle,
+      #000 0%,
+      transparent 70%
+    );
+
+  -webkit-mask-image:
+    radial-gradient(
+      circle,
+      #000 0%,
+      transparent 70%
+    );
+}
+
+
+/* =====================================================
+   CARD CONTENT
+   ===================================================== */
+
+.hero-card-content {
+  position: absolute;
+
+  left: 35px;
+  right: 35px;
+  bottom: 35px;
+
+  z-index: 5;
+}
+
+.hero-type {
+  color:
+    rgba(255, 255, 255, 0.55);
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 2.5px;
+}
+
+.hero-card-content h3 {
+  margin: 9px 0 10px;
+
+  font-size: 36px;
+
+  line-height: 1;
+
+  letter-spacing: -1.5px;
+}
+
+.hero-card-content p {
+  max-width: 340px;
+
+  margin: 0 0 22px;
+
+  color:
+    rgba(255, 255, 255, 0.52);
+
+  font-size: 13px;
+
+  line-height: 1.65;
+}
+
+
+/* =====================================================
+   CARD BUTTON
+   ===================================================== */
+
+.hero-card button {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 11px 18px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.16);
+
+  border-radius: 999px;
+
+  color: white;
+
+  background:
+    rgba(0, 0, 0, 0.35);
+
+  backdrop-filter: blur(10px);
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.hero-card button span {
+  font-size: 16px;
+
+  transition:
+    transform 0.3s ease;
+}
+
+.hero-card button:hover {
+  transform:
+    translateY(-3px);
+
+  background:
+    rgba(255, 255, 255, 0.1);
+
+  border-color:
+    rgba(255, 255, 255, 0.35);
+}
+
+.hero-card button:hover span {
+  transform:
+    translateX(4px);
+}
+
+
+/* =====================================================
+   CARD HOVER
+   ===================================================== */
+
+.hero-card:hover {
+  transform:
+    translateY(-10px);
+
+  border-color:
+    rgba(255, 255, 255, 0.2);
+
+  box-shadow:
+    0 30px 80px
+    rgba(0, 0, 0, 0.55);
+}
+
+.hero-card:hover .character-image {
+  transform:
+    translateX(-50%)
+    scale(1.09);
+
+  opacity: 0.82;
+}
+
+.hero-card:hover .card-glow {
+  opacity: 0.55;
+
+  transform:
+    translateX(-50%)
+    scale(1.25);
+}
+
+
+/* =====================================================
+   CHARACTER DATABASE
+   ===================================================== */
+
+.character-details {
+  position: relative;
+
+  padding: 150px 6%;
+
+  overflow: hidden;
+
+  color: white;
+
+  background:
+    radial-gradient(
+      circle at 15% 35%,
+      rgba(220, 20, 35, 0.08),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 85% 65%,
+      rgba(110, 55, 255, 0.08),
+      transparent 30%
+    ),
+    #030305;
+}
+
+
+/* TOP DIVIDER */
+
+.character-details::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 8%;
+  right: 8%;
+
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.16),
+      transparent
+    );
+}
+
+
+/* DATABASE HEADING */
+
+.character-details-heading {
+  width: min(720px, 100%);
+
+  margin: 0 auto 75px;
+
+  text-align: center;
+}
+
+.character-details-heading h2 {
+  margin: 0;
+
+  font-size:
+    clamp(45px, 6vw, 78px);
+
+  line-height: 1;
+
+  letter-spacing: -4px;
+}
+
+.character-details-heading h2 span {
+  background:
+    linear-gradient(
+      90deg,
+      #ff3030,
+      #ff8c35,
+      #ffd166,
+      #9d7aff
+    );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent;
+}
+
+.character-details-heading p {
+  max-width: 600px;
+
+  margin: 25px auto 0;
+
+  color:
+    rgba(255, 255, 255, 0.48);
+
+  font-size: 15px;
+
+  line-height: 1.7;
+}
+
+
+/* =====================================================
+   DETAILS GRID
+   ===================================================== */
+
+.character-details-grid {
+  width: min(1200px, 100%);
+
+  margin: 0 auto;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 30px;
+}
+
+
+/* =====================================================
+   DETAIL CARD
+   ===================================================== */
+
+.character-detail {
+  position: relative;
+
+  min-height: 470px;
+
+  display: grid;
+
+  grid-template-columns:
+    0.9fr 1.1fr;
+
+  overflow: hidden;
+
+  border-radius: 30px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.09);
+
+  background:
+    #09090e;
+
+  box-shadow:
+    0 30px 100px
+    rgba(0, 0, 0, 0.35);
+
+  isolation: isolate;
+}
+
+
+/* DEADPOOL DETAIL */
+
+.deadpool-detail {
+  background:
+    radial-gradient(
+      circle at 20% 35%,
+      rgba(220, 20, 35, 0.28),
+      transparent 35%
+    ),
+    linear-gradient(
+      120deg,
+      #190508,
+      #08080d 65%
+    );
+
+  border-left:
+    2px solid
+    rgba(230, 30, 45, 0.6);
+}
+
+
+/* WOLVERINE DETAIL */
+
+.wolverine-detail {
+  background:
+    radial-gradient(
+      circle at 20% 35%,
+      rgba(230, 170, 35, 0.22),
+      transparent 35%
+    ),
+    linear-gradient(
+      120deg,
+      #171307,
+      #08080d 65%
+    );
+
+  border-left:
+    2px solid
+    rgba(240, 185, 45, 0.6);
+}
+
+
+/* =====================================================
+   DETAIL IMAGE
+   ===================================================== */
+
+.detail-image {
+  position: relative;
+
+  min-height: 470px;
+
+  overflow: hidden;
+}
+
+.detail-image::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent 50%,
+      #09090e 100%
+    );
+
+  pointer-events: none;
+}
+
+.deadpool-detail .detail-image::before,
+.wolverine-detail .detail-image::before {
+  content: "";
+
+  position: absolute;
+
+  width: 350px;
+  height: 350px;
+
+  left: 50%;
+  top: 35%;
+
+  transform:
+    translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  filter: blur(80px);
+
+  opacity: 0.4;
+
+  z-index: -1;
+}
+
+.deadpool-detail .detail-image::before {
+  background: #e52235;
+}
+
+.wolverine-detail .detail-image::before {
+  background: #e5a929;
+}
+
+.detail-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  object-position: center top;
+
+  opacity: 0.9;
+
+  transition:
+    transform 0.7s ease,
+    filter 0.7s ease;
+}
+
+.character-detail:hover .detail-image img {
+  transform:
+    scale(1.05);
+}
+
+
+/* =====================================================
+   DETAIL CONTENT
+   ===================================================== */
+
+.detail-content {
+  position: relative;
+
+  z-index: 2;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  padding: 60px;
+}
+
+.detail-type {
+  color:
+    rgba(255, 255, 255, 0.48);
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 3px;
+}
+
+.detail-content h3 {
+  margin: 12px 0 20px;
+
+  font-size:
+    clamp(45px, 5vw, 72px);
+
+  line-height: 0.95;
+
+  letter-spacing: -3px;
+}
+
+.deadpool-detail .detail-content h3 {
+  color: #ff3548;
+
+  text-shadow:
+    0 0 30px
+    rgba(255, 30, 45, 0.25);
+}
+
+.wolverine-detail .detail-content h3 {
+  color: #ffc936;
+
+  text-shadow:
+    0 0 30px
+    rgba(255, 195, 45, 0.2);
+}
+
+.detail-content > p {
+  max-width: 540px;
+
+  margin: 0 0 35px;
+
+  color:
+    rgba(255, 255, 255, 0.55);
+
+  font-size: 15px;
+
+  line-height: 1.8;
+}
+
+
+/* =====================================================
+   ABILITIES
+   ===================================================== */
+
+.abilities {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 12px;
+
+  max-width: 580px;
+}
+
+.ability {
+  min-height: 78px;
+
+  padding: 15px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: space-between;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.08);
+
+  border-radius: 14px;
+
+  background:
+    rgba(255, 255, 255, 0.035);
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.ability:hover {
+  transform:
+    translateY(-5px);
+
+  background:
+    rgba(255, 255, 255, 0.07);
+
+  border-color:
+    rgba(255, 255, 255, 0.2);
+}
+
+.ability span {
+  color:
+    rgba(255, 255, 255, 0.28);
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 1px;
+}
+
+.ability strong {
+  color:
+    rgba(255, 255, 255, 0.82);
+
+  font-size: 9px;
+
+  letter-spacing: 1.2px;
+}
+
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 900px) {
+
+  .heroes {
+    padding: 100px 20px;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-card {
+    min-height: 500px;
+  }
+
+  .character-details {
+    padding: 110px 20px;
+  }
+
+  .character-detail {
+    grid-template-columns: 1fr;
+
+    min-height: auto;
+  }
+
+  .detail-image {
+    height: 420px;
+    min-height: 420px;
+  }
+
+  .detail-image::after {
+    background:
+      linear-gradient(
+        to bottom,
+        transparent 45%,
+        #09090e 100%
+      );
+  }
+
+  .detail-content {
+    padding: 40px 30px 45px;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .section-heading h2,
+  .character-details-heading h2 {
+    letter-spacing: -2px;
+  }
+
+  .hero-card {
+    min-height: 480px;
+  }
+
+  .hero-card-content {
+    left: 25px;
+    right: 25px;
+    bottom: 25px;
+  }
+
+  .hero-card-content h3 {
+    font-size: 32px;
+  }
+
+  .detail-image {
+    height: 350px;
+    min-height: 350px;
+  }
+
+  .detail-content {
+    padding: 35px 25px 40px;
+  }
+
+  .detail-content h3 {
+    font-size: 48px;
+
+    letter-spacing: -2px;
+  }
+
+  .detail-content > p {
+    font-size: 14px;
+  }
+
+  .abilities {
+    grid-template-columns: 1fr;
+  }
+
+  .ability {
+    min-height: 65px;
+  }
+
+}
+
+
+/* =====================================================
+   ACCESSIBILITY
+   ===================================================== */
+
+.hero-card button:focus-visible {
+  outline: 2px solid #ffffff;
+
+  outline-offset: 4px;
+}
+
+
+/* =====================================================
+   TEXT SELECTION
+   ===================================================== */
+
+::selection {
+  color: #ffffff;
+
+  background:
+    rgba(220, 25, 40, 0.75);
+}
+/* =====================================================
+   CHARACTER DETAILS
+   ===================================================== */
+
+.character-details {
+  position: relative;
+  padding: 140px 6%;
+  overflow: hidden;
+  color: #ffffff;
+  background:
+    radial-gradient(
+      circle at 20% 30%,
+      rgba(220, 20, 35, 0.12),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 80% 70%,
+      rgba(120, 70, 255, 0.10),
+      transparent 35%
+    ),
+    #050509;
+}
+
+
+/* ================= HEADING ================= */
+
+.character-details-heading {
+  width: min(720px, 100%);
+  margin: 0 auto 70px;
+  text-align: center;
+}
+
+.character-details-heading .section-label {
+  display: inline-block;
+  margin-bottom: 18px;
+
+  color: #ff4545;
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+
+.character-details-heading h2 {
+  margin: 0;
+
+  font-size: clamp(45px, 6vw, 78px);
+  line-height: 1;
+  letter-spacing: -4px;
+}
+
+.character-details-heading h2 span {
+  background:
+    linear-gradient(
+      90deg,
+      #ff3030,
+      #ff8c35,
+      #ffd166,
+      #9d7aff
+    );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent;
+}
+
+.character-details-heading p {
+  max-width: 600px;
+
+  margin: 25px auto 0;
+
+  color: rgba(255, 255, 255, 0.5);
+
+  line-height: 1.7;
+}
+
+
+/* ================= GRID ================= */
+
+.character-details-grid {
+  width: min(1200px, 100%);
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 30px;
+}
+
+
+/* ================= CHARACTER CARD ================= */
+
+.character-detail {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns: 0.9fr 1.1fr;
+
+  min-height: 500px;
+
+  overflow: hidden;
+
+  border-radius: 28px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.1);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.06),
+      rgba(255, 255, 255, 0.015)
+    );
+
+  box-shadow:
+    0 30px 100px
+    rgba(0, 0, 0, 0.45);
+
+  transition:
+    transform 0.5s ease,
+    border-color 0.5s ease,
+    box-shadow 0.5s ease;
+}
+
+.character-detail:hover {
+  transform: translateY(-6px);
+
+  border-color:
+    rgba(255, 255, 255, 0.2);
+
+  box-shadow:
+    0 40px 120px
+    rgba(0, 0, 0, 0.65);
+}
+
+
+/* ================= DEADPOOL ================= */
+
+.deadpool-detail {
+  background:
+    radial-gradient(
+      circle at 20% 50%,
+      rgba(230, 20, 35, 0.22),
+      transparent 40%
+    ),
+    linear-gradient(
+      135deg,
+      #180407,
+      #07070a
+    );
+
+  border-left:
+    3px solid
+    #e52535;
+}
+
+
+/* ================= WOLVERINE ================= */
+
+.wolverine-detail {
+  background:
+    radial-gradient(
+      circle at 20% 50%,
+      rgba(230, 175, 35, 0.20),
+      transparent 40%
+    ),
+    linear-gradient(
+      135deg,
+      #171408,
+      #07070a
+    );
+
+  border-left:
+    3px solid
+    #e4aa28;
+}
+
+
+/* ================= IMAGE ================= */
+
+.detail-image {
+  position: relative;
+
+  min-height: 500px;
+
+  overflow: hidden;
+}
+
+.detail-image::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent 55%,
+      #07070a 100%
+    );
+
+  pointer-events: none;
+}
+
+.detail-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  object-position: center;
+
+  display: block;
+
+  filter:
+    contrast(1.15)
+    saturate(1.1)
+    brightness(0.78);
+
+  transition:
+    transform 0.8s ease,
+    filter 0.8s ease;
+}
+
+.character-detail:hover .detail-image img {
+  transform: scale(1.05);
+
+  filter:
+    contrast(1.18)
+    saturate(1.2)
+    brightness(0.9);
+}
+
+
+/* ================= CONTENT ================= */
+
+.detail-content {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 60px;
+}
+
+.detail-type {
+  margin-bottom: 15px;
+
+  color:
+    rgba(255, 255, 255, 0.4);
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 3px;
+}
+
+.detail-content h3 {
+  margin: 0 0 20px;
+
+  font-size: clamp(42px, 5vw, 70px);
+
+  line-height: 0.95;
+
+  letter-spacing: -3px;
+}
+
+.detail-content p {
+  max-width: 520px;
+
+  margin: 0 0 35px;
+
+  color:
+    rgba(255, 255, 255, 0.58);
+
+  font-size: 15px;
+
+  line-height: 1.8;
+}
+
+
+/* ================= ABILITIES ================= */
+
+.abilities {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 10px;
+}
+
+.ability {
+  padding: 18px 15px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.08);
+
+  border-radius: 14px;
+
+  background:
+    rgba(255, 255, 255, 0.035);
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.ability:hover {
+  transform: translateY(-4px);
+
+  background:
+    rgba(255, 255, 255, 0.08);
+
+  border-color:
+    rgba(255, 255, 255, 0.2);
+}
+
+.ability span {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color:
+    rgba(255, 255, 255, 0.3);
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+.ability strong {
+  color: #ffffff;
+
+  font-size: 10px;
+
+  letter-spacing: 1px;
+}
+
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 800px) {
+
+  .character-details {
+    padding: 100px 20px;
+  }
+
+  .character-detail {
+    grid-template-columns: 1fr;
+
+    min-height: auto;
+  }
+
+  .detail-image {
+    min-height: 380px;
+  }
+
+  .detail-image::after {
+    background:
+      linear-gradient(
+        to bottom,
+        transparent 55%,
+        #07070a 100%
+      );
+  }
+
+  .detail-content {
+    padding: 35px 25px 40px;
+  }
+
+  .detail-content h3 {
+    font-size: 48px;
+  }
+
+  .abilities {
+    grid-template-columns: 1fr;
+  }
+
+}

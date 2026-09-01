@@ -1,0 +1,1833 @@
+/* =====================================================
+   HERO VERSE — HOME
+   CINEMATIC COMIC STYLE
+   ===================================================== */
+
+.home {
+  min-height: 100vh;
+  overflow: hidden;
+  color: #ffffff;
+  background: #030305;
+}
+
+
+/* =====================================================
+   HERO
+   ===================================================== */
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+  isolation: isolate;
+
+  background:
+    radial-gradient(
+      ellipse at 18% 55%,
+      rgba(210, 15, 30, 0.28),
+      transparent 38%
+    ),
+    radial-gradient(
+      ellipse at 82% 55%,
+      rgba(255, 170, 30, 0.18),
+      transparent 38%
+    ),
+    #030305;
+}
+
+
+/* =====================================================
+   CINEMATIC BACKGROUND
+   ===================================================== */
+
+.hero-background {
+  position: absolute;
+  inset: 0;
+  z-index: -5;
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      90deg,
+      #090204 0%,
+      #050509 35%,
+      #030306 50%,
+      #070605 65%,
+      #090704 100%
+    );
+}
+
+
+/* RED LIGHT */
+
+.red-glow {
+  position: absolute;
+
+  left: -18%;
+  top: 5%;
+
+  width: 60%;
+  height: 90%;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 20, 35, 0.58) 0%,
+      rgba(190, 10, 25, 0.25) 35%,
+      rgba(100, 0, 10, 0.08) 55%,
+      transparent 72%
+    );
+
+  filter: blur(45px);
+
+  animation: redPulse 5s ease-in-out infinite;
+}
+
+
+/* GOLD / BLUE LIGHT */
+
+.blue-glow {
+  position: absolute;
+
+  right: -18%;
+  top: 3%;
+
+  width: 60%;
+  height: 92%;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 190, 40, 0.38) 0%,
+      rgba(40, 90, 170, 0.18) 38%,
+      rgba(20, 30, 80, 0.08) 55%,
+      transparent 72%
+    );
+
+  filter: blur(55px);
+
+  animation: bluePulse 6s ease-in-out infinite;
+}
+
+
+/* CINEMATIC FOG */
+
+.smoke {
+  position: absolute;
+
+  inset: -20%;
+
+  opacity: 0.8;
+
+  background:
+    radial-gradient(
+      ellipse at 25% 45%,
+      rgba(255, 255, 255, 0.055),
+      transparent 25%
+    ),
+    radial-gradient(
+      ellipse at 75% 48%,
+      rgba(255, 255, 255, 0.045),
+      transparent 28%
+    ),
+    radial-gradient(
+      ellipse at 50% 70%,
+      rgba(255, 255, 255, 0.025),
+      transparent 35%
+    );
+
+  filter: blur(35px);
+
+  animation:
+    smokeMove
+    14s
+    ease-in-out
+    infinite alternate;
+}
+
+
+/* =====================================================
+   LIGHT BEAMS
+   ===================================================== */
+
+.hero-background::before,
+.hero-background::after {
+  content: "";
+
+  position: absolute;
+
+  top: -20%;
+  bottom: -20%;
+
+  width: 18%;
+
+  opacity: 0.08;
+
+  filter: blur(15px);
+
+  transform: rotate(12deg);
+}
+
+
+.hero-background::before {
+  left: 20%;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 30, 40, 0.8),
+      transparent
+    );
+}
+
+
+.hero-background::after {
+  right: 20%;
+
+  transform: rotate(-12deg);
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 210, 70, 0.8),
+      transparent
+    );
+}
+
+
+/* =====================================================
+   OVERLAY
+   ===================================================== */
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+
+  z-index: -2;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.78),
+      rgba(0, 0, 0, 0.32) 35%,
+      rgba(0, 0, 0, 0.28) 65%,
+      rgba(0, 0, 0, 0.78)
+    ),
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.15),
+      transparent 45%,
+      rgba(0, 0, 0, 0.65)
+    );
+
+  pointer-events: none;
+}
+
+
+/* CENTER VIGNETTE */
+
+.hero::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  z-index: -1;
+
+  background:
+    radial-gradient(
+      ellipse at center,
+      transparent 15%,
+      rgba(0, 0, 0, 0.25) 55%,
+      rgba(0, 0, 0, 0.75) 100%
+    );
+
+  pointer-events: none;
+}
+
+
+/* =====================================================
+   HERO CONTENT
+   ===================================================== */
+
+.hero-content {
+  position: relative;
+
+  z-index: 20;
+
+  width: min(850px, 90%);
+
+  padding: 120px 0 100px;
+
+  text-align: center;
+}
+
+
+/* EYEBROW */
+
+.eyebrow {
+  display: inline-flex;
+
+  align-items: center;
+  gap: 10px;
+
+  padding: 10px 18px;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.16);
+
+  border-radius: 999px;
+
+  background:
+    rgba(0, 0, 0, 0.38);
+
+  backdrop-filter: blur(14px);
+
+  color: #f0dada;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: 2.5px;
+
+  box-shadow:
+    0 10px 40px
+    rgba(0, 0, 0, 0.3);
+}
+
+
+/* RED STATUS DOT */
+
+.dot {
+  width: 7px;
+  height: 7px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #ff2638;
+
+  box-shadow:
+    0 0 8px #ff2638,
+    0 0 20px rgba(255, 30, 50, 0.9);
+
+  animation:
+    dotPulse
+    1.8s
+    ease-in-out
+    infinite;
+}
+
+
+/* =====================================================
+   TITLE
+   ===================================================== */
+
+.hero h1 {
+  margin: 32px 0 25px;
+
+  font-size:
+    clamp(58px, 8vw, 112px);
+
+  line-height: 0.9;
+
+  letter-spacing: -6px;
+
+  font-weight: 900;
+
+  text-shadow:
+    0 8px 35px rgba(0, 0, 0, 0.9),
+    0 20px 70px rgba(0, 0, 0, 0.7);
+}
+
+
+.hero h1 span {
+  display: block;
+
+  margin-top: 12px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #ff2638 0%,
+      #ff5135 30%,
+      #ffc928 58%,
+      #f2a72e 72%,
+      #9a72ff 100%
+    );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent;
+
+  filter:
+    drop-shadow(
+      0 0 25px
+      rgba(255, 40, 40, 0.25)
+    );
+}
+
+
+/* =====================================================
+   DESCRIPTION
+   ===================================================== */
+
+.hero-content p {
+  max-width: 650px;
+
+  margin: 0 auto 38px;
+
+  color:
+    rgba(255, 255, 255, 0.68);
+
+  font-size: 18px;
+
+  line-height: 1.7;
+
+  text-shadow:
+    0 2px 12px rgba(0, 0, 0, 0.8);
+}
+
+
+/* =====================================================
+   BUTTONS
+   ===================================================== */
+
+.hero-actions {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 14px;
+}
+
+
+.primary-button,
+.secondary-button {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+
+  min-height: 50px;
+
+  padding: 15px 26px;
+
+  border-radius: 999px;
+
+  text-decoration: none;
+
+  font-size: 13px;
+  font-weight: 800;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease;
+}
+
+
+.primary-button {
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      135deg,
+      #e32135,
+      #9c2dff
+    );
+
+  box-shadow:
+    0 12px 40px
+    rgba(220, 25, 50, 0.35);
+}
+
+
+.primary-button:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 18px 55px
+    rgba(235, 30, 60, 0.55);
+}
+
+
+.primary-button span {
+  font-size: 18px;
+
+  transition:
+    transform 0.3s ease;
+}
+
+
+.primary-button:hover span {
+  transform:
+    translateX(4px);
+}
+
+
+.secondary-button {
+  color:
+    rgba(255, 255, 255, 0.9);
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.2);
+
+  background:
+    rgba(0, 0, 0, 0.32);
+
+  backdrop-filter: blur(14px);
+}
+
+
+.secondary-button:hover {
+  transform: translateY(-4px);
+
+  border-color:
+    rgba(255, 255, 255, 0.4);
+
+  background:
+    rgba(255, 255, 255, 0.09);
+}
+
+
+/* =====================================================
+   CHARACTER IMAGES
+   ===================================================== */
+
+.hero-character {
+  position: absolute;
+
+  bottom: -2%;
+
+  width: 43%;
+  height: 94%;
+
+  z-index: 4;
+
+  pointer-events: none;
+
+  opacity: 0.96;
+
+  transition:
+    transform 0.7s ease;
+}
+
+
+/* IMAGE */
+
+.hero-character img {
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  object-position: center top;
+
+  -webkit-mask-image:
+    linear-gradient(
+      to bottom,
+      #000 68%,
+      rgba(0, 0, 0, 0.9) 78%,
+      transparent 100%
+    );
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      #000 68%,
+      rgba(0, 0, 0, 0.9) 78%,
+      transparent 100%
+    );
+}
+
+
+/* =====================================================
+   DEADPOOL
+   ===================================================== */
+
+.character-left {
+  left: -6%;
+
+  transform:
+    perspective(1200px)
+    rotateY(10deg);
+}
+
+
+.character-left img {
+  filter:
+    contrast(1.18)
+    saturate(1.2)
+    brightness(0.72)
+    drop-shadow(
+      15px 0 45px
+      rgba(230, 20, 35, 0.45)
+    );
+}
+
+
+/* RED EDGE */
+
+.character-left::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255, 20, 35, 0.35),
+      transparent 42%
+    );
+
+  pointer-events: none;
+
+  mix-blend-mode: screen;
+}
+
+
+/* =====================================================
+   WOLVERINE
+   ===================================================== */
+
+.character-right {
+  right: -6%;
+
+  transform:
+    perspective(1200px)
+    rotateY(-10deg);
+}
+
+
+.character-right img {
+  filter:
+    contrast(1.18)
+    saturate(1.05)
+    brightness(0.7)
+    drop-shadow(
+      -15px 0 45px
+      rgba(255, 190, 35, 0.35)
+    );
+}
+
+
+/* GOLD EDGE */
+
+.character-right::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      270deg,
+      rgba(255, 190, 35, 0.3),
+      transparent 42%
+    );
+
+  pointer-events: none;
+
+  mix-blend-mode: screen;
+}
+
+
+/* =====================================================
+   DEADPOOL SLASHES
+   ===================================================== */
+
+.slashes {
+  position: absolute;
+
+  left: 31%;
+  top: 36%;
+
+  display: flex;
+
+  gap: 9px;
+
+  transform:
+    rotate(-25deg);
+
+  opacity: 0.85;
+}
+
+
+.slashes span {
+  width: 4px;
+  height: 105px;
+
+  border-radius: 999px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      transparent,
+      #ff3030,
+      #ffffff,
+      #ff3030,
+      transparent
+    );
+
+  box-shadow:
+    0 0 12px
+    rgba(255, 35, 45, 0.8),
+    0 0 30px
+    rgba(255, 20, 30, 0.35);
+
+  animation:
+    slashGlow
+    2.5s
+    ease-in-out
+    infinite alternate;
+}
+
+
+.slashes span:nth-child(2) {
+  height: 125px;
+
+  animation-delay: 0.2s;
+}
+
+
+.slashes span:nth-child(3) {
+  height: 95px;
+
+  animation-delay: 0.4s;
+}
+
+
+/* =====================================================
+   WOLVERINE CLAWS
+   ===================================================== */
+
+.claws {
+  position: absolute;
+
+  right: 22%;
+  top: 37%;
+
+  display: flex;
+
+  gap: 8px;
+
+  transform:
+    rotate(-18deg);
+
+  opacity: 0.9;
+}
+
+
+.claws span {
+  width: 5px;
+  height: 92px;
+
+  border-radius: 999px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      #ffffff,
+      #b9c2cc 45%,
+      #ffffff
+    );
+
+  box-shadow:
+    0 0 10px
+    rgba(255, 255, 255, 0.8),
+    0 0 28px
+    rgba(255, 200, 70, 0.5);
+
+  transform:
+    skewX(-12deg);
+}
+
+
+/* =====================================================
+   PARTICLES
+   ===================================================== */
+
+.particles {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 8;
+
+  pointer-events: none;
+}
+
+
+.particles span {
+  position: absolute;
+
+  width: 3px;
+  height: 3px;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 0 8px
+    rgba(255, 255, 255, 0.9);
+
+  animation:
+    particleFloat
+    5s
+    ease-in-out
+    infinite;
+}
+
+
+.particles span:nth-child(1) {
+  left: 12%;
+  top: 30%;
+}
+
+
+.particles span:nth-child(2) {
+  left: 20%;
+  top: 70%;
+  animation-delay: 1s;
+}
+
+
+.particles span:nth-child(3) {
+  left: 35%;
+  top: 18%;
+  animation-delay: 2s;
+}
+
+
+.particles span:nth-child(4) {
+  left: 48%;
+  top: 80%;
+  animation-delay: 1.5s;
+}
+
+
+.particles span:nth-child(5) {
+  left: 65%;
+  top: 22%;
+  animation-delay: 3s;
+}
+
+
+.particles span:nth-child(6) {
+  left: 75%;
+  top: 65%;
+  animation-delay: 0.8s;
+}
+
+
+.particles span:nth-child(7) {
+  left: 88%;
+  top: 35%;
+  animation-delay: 2.5s;
+}
+
+
+.particles span:nth-child(8) {
+  left: 55%;
+  top: 40%;
+  animation-delay: 4s;
+}
+
+
+/* =====================================================
+   HERO BOTTOM
+   ===================================================== */
+
+.hero-bottom {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 220px;
+
+  z-index: 15;
+
+  background:
+    linear-gradient(
+      to bottom,
+      transparent,
+      #030305 90%
+    );
+
+  pointer-events: none;
+}
+
+
+/* =====================================================
+   ANIMATIONS
+   ===================================================== */
+
+@keyframes redPulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+
+    opacity: 0.7;
+  }
+
+  50% {
+    transform: scale(1.12);
+
+    opacity: 1;
+  }
+}
+
+
+@keyframes bluePulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+
+    opacity: 0.55;
+  }
+
+  50% {
+    transform: scale(1.1);
+
+    opacity: 0.9;
+  }
+}
+
+
+@keyframes smokeMove {
+
+  from {
+    transform:
+      translate(-2%, -1%)
+      scale(1);
+  }
+
+  to {
+    transform:
+      translate(2%, 2%)
+      scale(1.08);
+  }
+}
+
+
+@keyframes dotPulse {
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.45;
+    transform: scale(0.7);
+  }
+}
+
+
+@keyframes particleFloat {
+
+  0%,
+  100% {
+    transform:
+      translateY(0)
+      scale(1);
+
+    opacity: 0.2;
+  }
+
+  50% {
+    transform:
+      translateY(-35px)
+      scale(1.5);
+
+    opacity: 1;
+  }
+}
+
+
+@keyframes slashGlow {
+
+  from {
+    opacity: 0.55;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+/* =====================================================
+   SCROLL SECTIONS
+   ===================================================== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+.hero,
+#heroes,
+#battles,
+#universe,
+#gallery,
+.comic-footer {
+  scroll-margin-top: 80px;
+}
+
+
+#heroes,
+#battles,
+#universe,
+#gallery {
+  position: relative;
+}
+
+
+#heroes::before,
+#battles::before,
+#universe::before,
+#gallery::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 8%;
+  right: 8%;
+
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.14),
+      transparent
+    );
+}
+
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
+
+.comic-footer {
+  position: relative;
+
+  padding: 80px 6% 30px;
+
+  overflow: hidden;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      180deg,
+      #050508,
+      #020204
+    );
+
+  border-top:
+    1px solid
+    rgba(255, 255, 255, 0.08);
+}
+
+
+.comic-footer::before {
+  content: "";
+
+  position: absolute;
+
+  width: 450px;
+  height: 450px;
+
+  left: -180px;
+  bottom: -250px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(210, 20, 35, 0.16);
+
+  filter: blur(100px);
+
+  pointer-events: none;
+}
+
+
+.footer-top {
+  position: relative;
+
+  z-index: 2;
+
+  width: min(1200px, 100%);
+
+  margin: 0 auto;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 80px;
+}
+
+
+.footer-brand {
+  max-width: 360px;
+}
+
+
+.footer-logo {
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 26px;
+
+  font-weight: 900;
+
+  letter-spacing: -1px;
+}
+
+
+.footer-logo span {
+  color: #ff3030;
+}
+
+
+.footer-brand p {
+  margin-top: 18px;
+
+  color:
+    rgba(255, 255, 255, 0.4);
+
+  font-size: 13px;
+
+  line-height: 1.7;
+}
+
+
+.footer-links {
+  display: flex;
+
+  gap: 100px;
+}
+
+
+.footer-links div {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 13px;
+}
+
+
+.footer-links span {
+  margin-bottom: 8px;
+
+  color:
+    rgba(255, 255, 255, 0.3);
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+
+.footer-links a {
+  color:
+    rgba(255, 255, 255, 0.55);
+
+  text-decoration: none;
+
+  font-size: 12px;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+
+.footer-links a:hover {
+  color: #ffffff;
+
+  transform:
+    translateX(4px);
+}
+
+
+.footer-bottom {
+  position: relative;
+
+  z-index: 2;
+
+  width: min(1200px, 100%);
+
+  margin: 70px auto 0;
+
+  padding-top: 22px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  border-top:
+    1px solid
+    rgba(255, 255, 255, 0.07);
+
+  color:
+    rgba(255, 255, 255, 0.25);
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+}
+
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 800px) {
+
+  .hero {
+    min-height: 850px;
+  }
+
+
+  .hero-content {
+    width: 90%;
+
+    padding:
+      130px 20px 110px;
+  }
+
+
+  .hero h1 {
+    font-size: 58px;
+
+    letter-spacing: -3px;
+  }
+
+
+  .hero-content p {
+    font-size: 16px;
+  }
+
+
+  .hero-actions {
+    flex-direction: column;
+  }
+
+
+  .primary-button,
+  .secondary-button {
+    width: 100%;
+
+    max-width: 280px;
+  }
+
+
+  .hero-character {
+    width: 68%;
+
+    height: 76%;
+
+    opacity: 0.42;
+  }
+
+
+  .character-left {
+    left: -30%;
+
+    transform:
+      perspective(900px)
+      rotateY(8deg);
+  }
+
+
+  .character-right {
+    right: -30%;
+
+    transform:
+      perspective(900px)
+      rotateY(-8deg);
+  }
+
+
+  .claws {
+    right: 18%;
+
+    transform:
+      rotate(-18deg)
+      scale(0.7);
+  }
+
+
+  .slashes {
+    left: 28%;
+
+    transform:
+      rotate(-25deg)
+      scale(0.7);
+  }
+
+
+  .footer-top {
+    flex-direction: column;
+
+    gap: 50px;
+  }
+
+
+  .footer-links {
+    gap: 60px;
+  }
+
+
+  .footer-bottom {
+    margin-top: 50px;
+
+    flex-direction: column;
+
+    gap: 12px;
+  }
+
+}
+
+
+@media (max-width: 480px) {
+
+  .hero h1 {
+    font-size: 48px;
+
+    letter-spacing: -2px;
+  }
+
+
+  .eyebrow {
+    font-size: 9px;
+
+    letter-spacing: 1.5px;
+  }
+
+
+  .hero-character {
+    opacity: 0.3;
+  }
+
+}
+
+
+/* =====================================================
+   TEXT SELECTION
+   ===================================================== */
+
+::selection {
+  color: #ffffff;
+
+  background:
+    rgba(220, 25, 40, 0.75);
+}
+
+/* =====================================================
+   CHARACTER CINEMATIC GLOW
+   ===================================================== */
+
+.character-left::before,
+.character-right::before {
+  content: "";
+
+  position: absolute;
+  inset: 5%;
+
+  border-radius: 50%;
+
+  filter: blur(70px);
+
+  opacity: 0.7;
+
+  z-index: -1;
+
+  pointer-events: none;
+}
+
+
+/* DEADPOOL RED ATMOSPHERE */
+
+.character-left::before {
+  background:
+    radial-gradient(
+      circle,
+      rgba(220, 20, 35, 0.55),
+      rgba(120, 0, 10, 0.2) 45%,
+      transparent 70%
+    );
+}
+
+
+/* WOLVERINE GOLD ATMOSPHERE */
+
+.character-right::before {
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 190, 40, 0.45),
+      rgba(80, 50, 0, 0.18) 45%,
+      transparent 70%
+    );
+}
+
+
+/* =====================================================
+   IMAGE FADE
+   ===================================================== */
+
+.hero-character img {
+  -webkit-mask-image:
+    linear-gradient(
+      to bottom,
+      #000 0%,
+      #000 62%,
+      rgba(0,0,0,0.95) 72%,
+      rgba(0,0,0,0.55) 82%,
+      transparent 100%
+    );
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      #000 0%,
+      #000 62%,
+      rgba(0,0,0,0.95) 72%,
+      rgba(0,0,0,0.55) 82%,
+      transparent 100%
+    );
+}
+
+
+/* =====================================================
+   CENTER CONTENT ABOVE CHARACTERS
+   ===================================================== */
+
+.hero-content {
+  z-index: 20;
+}
+
+
+/* =====================================================
+   CHARACTER DEPTH
+   ===================================================== */
+
+.character-left {
+  filter:
+    drop-shadow(
+      20px 20px 50px
+      rgba(0, 0, 0, 0.7)
+    );
+}
+
+.character-right {
+  filter:
+    drop-shadow(
+      -20px 20px 50px
+      rgba(0, 0, 0, 0.7)
+    );
+}
+
+
+/* =====================================================
+   SUBTLE CHARACTER MOVEMENT
+   ===================================================== */
+
+.character-left {
+  animation:
+    deadpoolFloat
+    7s
+    ease-in-out
+    infinite;
+}
+
+.character-right {
+  animation:
+    wolverineFloat
+    8s
+    ease-in-out
+    infinite;
+}
+
+
+@keyframes deadpoolFloat {
+
+  0%,
+  100% {
+    transform:
+      perspective(1200px)
+      rotateY(10deg)
+      translateY(0);
+  }
+
+  50% {
+    transform:
+      perspective(1200px)
+      rotateY(10deg)
+      translateY(-8px);
+  }
+}
+
+
+@keyframes wolverineFloat {
+
+  0%,
+  100% {
+    transform:
+      perspective(1200px)
+      rotateY(-10deg)
+      translateY(0);
+  }
+
+  50% {
+    transform:
+      perspective(1200px)
+      rotateY(-10deg)
+      translateY(-10px);
+  }
+}
+
+/* =====================================================
+   HERO VERSE — FINAL FOOTER POLISH
+   ===================================================== */
+
+.comic-footer {
+  position: relative;
+
+  padding: 90px 6% 35px;
+
+  overflow: hidden;
+
+  color: #ffffff;
+
+  background:
+    radial-gradient(
+      ellipse at 15% 20%,
+      rgba(220, 25, 40, 0.12),
+      transparent 35%
+    ),
+    radial-gradient(
+      ellipse at 85% 80%,
+      rgba(110, 60, 255, 0.1),
+      transparent 35%
+    ),
+    linear-gradient(
+      180deg,
+      #050508,
+      #010102
+    );
+
+  border-top:
+    1px solid
+    rgba(255, 255, 255, 0.08);
+}
+
+
+/* TOP RED LIGHT */
+
+.comic-footer::before {
+  content: "";
+
+  position: absolute;
+
+  width: 500px;
+  height: 500px;
+
+  left: -250px;
+  bottom: -320px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(220, 20, 35, 0.18);
+
+  filter: blur(110px);
+
+  pointer-events: none;
+}
+
+
+/* TOP BLUE LIGHT */
+
+.comic-footer::after {
+  content: "";
+
+  position: absolute;
+
+  width: 400px;
+  height: 400px;
+
+  right: -200px;
+  top: -250px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(100, 60, 255, 0.12);
+
+  filter: blur(100px);
+
+  pointer-events: none;
+}
+
+
+/* =====================================================
+   FOOTER TOP
+   ===================================================== */
+
+.footer-top {
+  position: relative;
+
+  z-index: 2;
+
+  width: min(1200px, 100%);
+
+  margin: 0 auto;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: flex-start;
+
+  gap: 80px;
+}
+
+
+/* =====================================================
+   BRAND
+   ===================================================== */
+
+.footer-brand {
+  max-width: 380px;
+}
+
+
+.footer-logo {
+  display: inline-block;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 28px;
+
+  font-weight: 900;
+
+  letter-spacing: -1.5px;
+
+  transition:
+    transform 0.3s ease,
+    text-shadow 0.3s ease;
+}
+
+
+.footer-logo span {
+  color: #ff3030;
+}
+
+
+.footer-logo:hover {
+  transform: translateY(-2px);
+
+  text-shadow:
+    0 0 25px
+    rgba(255, 40, 50, 0.45);
+}
+
+
+.footer-brand p {
+  max-width: 340px;
+
+  margin-top: 18px;
+
+  color:
+    rgba(255, 255, 255, 0.4);
+
+  font-size: 13px;
+
+  line-height: 1.8;
+}
+
+
+/* =====================================================
+   FOOTER LINKS
+   ===================================================== */
+
+.footer-links {
+  display: flex;
+
+  gap: 100px;
+}
+
+
+.footer-links div {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 14px;
+}
+
+
+.footer-links span {
+  margin-bottom: 7px;
+
+  color:
+    rgba(255, 255, 255, 0.3);
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 2.5px;
+}
+
+
+.footer-links a {
+  color:
+    rgba(255, 255, 255, 0.55);
+
+  text-decoration: none;
+
+  font-size: 12px;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+
+.footer-links a:hover {
+  color: #ffffff;
+
+  transform:
+    translateX(5px);
+}
+
+
+/* =====================================================
+   FOOTER BOTTOM
+   ===================================================== */
+
+.footer-bottom {
+  position: relative;
+
+  z-index: 2;
+
+  width: min(1200px, 100%);
+
+  margin: 75px auto 0;
+
+  padding-top: 24px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  border-top:
+    1px solid
+    rgba(255, 255, 255, 0.07);
+
+  color:
+    rgba(255, 255, 255, 0.25);
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.8px;
+}
+
+
+/* =====================================================
+   FOOTER MOBILE
+   ===================================================== */
+
+@media (max-width: 700px) {
+
+  .comic-footer {
+    padding:
+      70px 20px 25px;
+  }
+
+
+  .footer-top {
+    flex-direction: column;
+
+    gap: 50px;
+  }
+
+
+  .footer-links {
+    width: 100%;
+
+    justify-content: space-between;
+
+    gap: 40px;
+  }
+
+
+  .footer-bottom {
+    margin-top: 55px;
+
+    flex-direction: column;
+
+    gap: 12px;
+  }
+
+}
+
+
+@media (max-width: 420px) {
+
+  .footer-links {
+    gap: 25px;
+  }
+
+  .footer-logo {
+    font-size: 25px;
+  }
+
+}

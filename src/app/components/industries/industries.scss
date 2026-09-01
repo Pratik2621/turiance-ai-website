@@ -1,0 +1,608 @@
+/* =====================================================
+   HERO VERSE — THE UNIVERSE
+   CINEMATIC COMIC STYLE
+   ===================================================== */
+
+.universe {
+  position: relative;
+
+  padding: 140px 6%;
+
+  overflow: hidden;
+
+  color: #ffffff;
+
+  background:
+    radial-gradient(
+      ellipse at 15% 50%,
+      rgba(220, 25, 40, 0.10),
+      transparent 35%
+    ),
+    radial-gradient(
+      ellipse at 85% 35%,
+      rgba(120, 70, 255, 0.09),
+      transparent 35%
+    ),
+    #050509;
+}
+
+
+/* =====================================================
+   CINEMATIC BACKGROUND
+   ===================================================== */
+
+.universe::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      115deg,
+      transparent 20%,
+      rgba(255, 255, 255, 0.025) 50%,
+      transparent 80%
+    );
+
+  pointer-events: none;
+}
+
+
+.universe::after {
+  content: "";
+
+  position: absolute;
+
+  width: 600px;
+  height: 600px;
+
+  left: -300px;
+  bottom: -300px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(220, 20, 35, 0.10);
+
+  filter: blur(120px);
+
+  pointer-events: none;
+}
+
+
+/* =====================================================
+   HEADING
+   ===================================================== */
+
+.universe-heading {
+  position: relative;
+
+  z-index: 2;
+
+  width: min(720px, 100%);
+
+  margin: 0 auto 75px;
+
+  text-align: center;
+}
+
+
+.section-label {
+  display: inline-block;
+
+  margin-bottom: 18px;
+
+  color:
+    rgba(255, 255, 255, 0.38);
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 3px;
+}
+
+
+.universe-heading h2 {
+  margin: 0;
+
+  font-size:
+    clamp(48px, 7vw, 82px);
+
+  line-height: 0.95;
+
+  letter-spacing: -5px;
+
+  font-weight: 900;
+}
+
+
+.universe-heading h2 span {
+  background:
+    linear-gradient(
+      90deg,
+      #ff3030 0%,
+      #ff7b35 30%,
+      #ffd166 58%,
+      #9d72ff 100%
+    );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent;
+
+  filter:
+    drop-shadow(
+      0 0 25px
+      rgba(255, 50, 40, 0.2)
+    );
+}
+
+
+.universe-heading p {
+  max-width: 620px;
+
+  margin: 26px auto 0;
+
+  color:
+    rgba(255, 255, 255, 0.52);
+
+  font-size: 16px;
+
+  line-height: 1.75;
+}
+
+
+/* =====================================================
+   GRID
+   ===================================================== */
+
+.universe-grid {
+  position: relative;
+
+  z-index: 2;
+
+  width: min(1200px, 100%);
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap: 22px;
+}
+
+
+/* =====================================================
+   CARD
+   ===================================================== */
+
+.universe-card {
+  position: relative;
+
+  min-height: 310px;
+
+  padding: 38px;
+
+  overflow: hidden;
+
+  border-radius: 22px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.09);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.065),
+      rgba(255, 255, 255, 0.012)
+    );
+
+  backdrop-filter: blur(16px);
+
+  box-shadow:
+    0 25px 80px
+    rgba(0, 0, 0, 0.35);
+
+  transition:
+    transform 0.45s ease,
+    border-color 0.45s ease,
+    box-shadow 0.45s ease;
+}
+
+
+/* =====================================================
+   CARD GLOW
+   ===================================================== */
+
+.universe-card::before {
+  content: "";
+
+  position: absolute;
+
+  width: 330px;
+  height: 330px;
+
+  right: -150px;
+  top: -170px;
+
+  border-radius: 50%;
+
+  filter: blur(85px);
+
+  opacity: 0.30;
+
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease;
+
+  pointer-events: none;
+}
+
+
+.heroes-side::before {
+  background:
+    rgba(235, 30, 45, 0.45);
+}
+
+
+.villains-side::before {
+  background:
+    rgba(125, 65, 255, 0.45);
+}
+
+
+.mutants-side::before {
+  background:
+    rgba(255, 190, 40, 0.42);
+}
+
+
+.unknown-side::before {
+  background:
+    rgba(35, 130, 255, 0.42);
+}
+
+
+/* =====================================================
+   CARD GRID PATTERN
+   ===================================================== */
+
+.universe-card::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  opacity: 0.08;
+
+  background:
+    linear-gradient(
+      135deg,
+      transparent 48%,
+      rgba(255, 255, 255, 0.15) 49%,
+      transparent 50%
+    );
+
+  background-size: 22px 22px;
+
+  pointer-events: none;
+}
+
+
+/* =====================================================
+   NUMBER
+   ===================================================== */
+
+.card-number {
+  position: absolute;
+
+  top: 28px;
+  right: 30px;
+
+  color:
+    rgba(255, 255, 255, 0.18);
+
+  font-size: 11px;
+
+  font-weight: 900;
+
+  letter-spacing: 2px;
+}
+
+
+/* =====================================================
+   SYMBOL
+   ===================================================== */
+
+.card-symbol {
+  position: relative;
+
+  z-index: 2;
+
+  width: 56px;
+  height: 56px;
+
+  display: grid;
+
+  place-items: center;
+
+  margin-bottom: 55px;
+
+  border-radius: 16px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.12);
+
+  background:
+    rgba(255, 255, 255, 0.055);
+
+  color: #ffffff;
+
+  font-size: 23px;
+
+  box-shadow:
+    inset 0 0 25px
+    rgba(255, 255, 255, 0.025);
+
+  transition:
+    transform 0.4s ease,
+    background 0.4s ease;
+}
+
+
+/* =====================================================
+   TEXT
+   ===================================================== */
+
+.universe-card h3 {
+  position: relative;
+
+  z-index: 2;
+
+  margin: 0 0 13px;
+
+  font-size: 31px;
+
+  line-height: 1;
+
+  letter-spacing: -1px;
+
+  font-weight: 900;
+}
+
+
+.universe-card p {
+  position: relative;
+
+  z-index: 2;
+
+  max-width: 440px;
+
+  margin: 0 0 30px;
+
+  color:
+    rgba(255, 255, 255, 0.48);
+
+  font-size: 13px;
+
+  line-height: 1.75;
+}
+
+
+/* =====================================================
+   EXPLORE
+   ===================================================== */
+
+.explore {
+  position: relative;
+
+  z-index: 2;
+
+  color:
+    rgba(255, 255, 255, 0.42);
+
+  font-size: 9px;
+
+  font-weight: 900;
+
+  letter-spacing: 2px;
+
+  transition:
+    color 0.3s ease,
+    letter-spacing 0.3s ease;
+}
+
+
+/* =====================================================
+   COLORED TOP EDGES
+   ===================================================== */
+
+.heroes-side {
+  border-top:
+    2px solid
+    rgba(255, 45, 55, 0.75);
+}
+
+
+.villains-side {
+  border-top:
+    2px solid
+    rgba(130, 75, 255, 0.75);
+}
+
+
+.mutants-side {
+  border-top:
+    2px solid
+    rgba(255, 195, 50, 0.75);
+}
+
+
+.unknown-side {
+  border-top:
+    2px solid
+    rgba(45, 145, 255, 0.75);
+}
+
+
+/* =====================================================
+   HOVER
+   ===================================================== */
+
+.universe-card:hover {
+  transform:
+    translateY(-10px);
+
+  border-color:
+    rgba(255, 255, 255, 0.22);
+
+  box-shadow:
+    0 35px 100px
+    rgba(0, 0, 0, 0.55);
+}
+
+
+.universe-card:hover::before {
+  opacity: 0.65;
+
+  transform:
+    scale(1.25);
+}
+
+
+.universe-card:hover .card-symbol {
+  transform:
+    translateY(-4px)
+    scale(1.05);
+
+  background:
+    rgba(255, 255, 255, 0.10);
+}
+
+
+.universe-card:hover .explore {
+  color: #ffffff;
+
+  letter-spacing: 2.5px;
+}
+
+
+/* =====================================================
+   INDIVIDUAL CARD HOVER COLORS
+   ===================================================== */
+
+.heroes-side:hover {
+  box-shadow:
+    inset 0 2px 0 #ff3030,
+    0 35px 100px
+    rgba(220, 20, 40, 0.14);
+}
+
+
+.villains-side:hover {
+  box-shadow:
+    inset 0 2px 0 #9d72ff,
+    0 35px 100px
+    rgba(120, 60, 255, 0.14);
+}
+
+
+.mutants-side:hover {
+  box-shadow:
+    inset 0 2px 0 #ffd166,
+    0 35px 100px
+    rgba(255, 190, 40, 0.12);
+}
+
+
+.unknown-side:hover {
+  box-shadow:
+    inset 0 2px 0 #3b9cff,
+    0 35px 100px
+    rgba(30, 130, 255, 0.12);
+}
+
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 800px) {
+
+  .universe {
+    padding:
+      100px 20px;
+  }
+
+
+  .universe-heading {
+    margin-bottom: 55px;
+  }
+
+
+  .universe-heading h2 {
+    font-size: 52px;
+
+    letter-spacing: -3px;
+  }
+
+
+  .universe-heading p {
+    font-size: 14px;
+  }
+
+
+  .universe-grid {
+    grid-template-columns: 1fr;
+
+    gap: 18px;
+  }
+
+
+  .universe-card {
+    min-height: 290px;
+
+    padding: 30px;
+  }
+
+
+  .card-symbol {
+    margin-bottom: 45px;
+  }
+
+}
+
+
+@media (max-width: 480px) {
+
+  .universe-heading h2 {
+    font-size: 45px;
+  }
+
+
+  .universe-card {
+    min-height: 275px;
+
+    padding: 27px;
+  }
+
+
+  .universe-card h3 {
+    font-size: 27px;
+  }
+
+
+  .universe-card p {
+    font-size: 12px;
+  }
+
+}

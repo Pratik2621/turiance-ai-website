@@ -1,0 +1,644 @@
+/* =====================================================
+   HERO VERSE — BATTLEFIELD
+   CINEMATIC COMIC STYLE
+   ===================================================== */
+
+.battles {
+  position: relative;
+  overflow: hidden;
+
+  padding: 120px 6%;
+
+  color: #ffffff;
+
+  background:
+    radial-gradient(
+      circle at 20% 50%,
+      rgba(220, 20, 35, 0.12),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 80% 50%,
+      rgba(255, 190, 40, 0.08),
+      transparent 35%
+    ),
+    #030305;
+}
+
+
+/* =====================================================
+   BACKGROUND EFFECT
+   ===================================================== */
+
+.battles::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.025),
+      transparent
+    );
+
+  pointer-events: none;
+}
+
+
+.battles::after {
+  content: "";
+
+  position: absolute;
+
+  width: 500px;
+  height: 500px;
+
+  right: -250px;
+  top: 20%;
+
+  border-radius: 50%;
+
+  background:
+    rgba(255, 180, 30, 0.08);
+
+  filter: blur(120px);
+
+  pointer-events: none;
+}
+
+
+/* =====================================================
+   HEADING
+   ===================================================== */
+
+.battles-heading {
+  position: relative;
+
+  z-index: 2;
+
+  width: min(700px, 100%);
+
+  margin: 0 auto 70px;
+
+  text-align: center;
+}
+
+
+.section-label {
+  display: inline-block;
+
+  margin-bottom: 18px;
+
+  color: rgba(255, 255, 255, 0.38);
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 3px;
+}
+
+
+.battles-heading h2 {
+  margin: 0;
+
+  font-size:
+    clamp(48px, 7vw, 82px);
+
+  line-height: 0.95;
+
+  letter-spacing: -4px;
+
+  font-weight: 900;
+}
+
+
+.battles-heading h2 span {
+  background:
+    linear-gradient(
+      90deg,
+      #ff3030,
+      #ff9f2f,
+      #ffd166
+    );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent;
+}
+
+
+.battles-heading p {
+  max-width: 620px;
+
+  margin: 25px auto 0;
+
+  color:
+    rgba(255, 255, 255, 0.5);
+
+  font-size: 16px;
+
+  line-height: 1.7;
+}
+
+
+/* =====================================================
+   BATTLE GRID
+   ===================================================== */
+
+.battle-grid {
+  position: relative;
+
+  z-index: 2;
+
+  width: min(1200px, 100%);
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 22px;
+}
+
+
+/* =====================================================
+   CARD
+   ===================================================== */
+
+.battle-card {
+  position: relative;
+
+  min-height: 390px;
+
+  padding: 35px;
+
+  overflow: hidden;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: flex-end;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.1);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.06),
+      rgba(255, 255, 255, 0.015)
+    );
+
+  backdrop-filter: blur(14px);
+
+  box-shadow:
+    0 25px 80px
+    rgba(0, 0, 0, 0.35);
+
+  transition:
+    transform 0.4s ease,
+    border-color 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+
+/* CARD HOVER */
+
+.battle-card:hover {
+  transform:
+    translateY(-10px);
+
+  border-color:
+    rgba(255, 255, 255, 0.25);
+
+  box-shadow:
+    0 35px 90px
+    rgba(0, 0, 0, 0.55);
+}
+
+
+/* =====================================================
+   CARD LIGHT
+   ===================================================== */
+
+.battle-card::before {
+  content: "";
+
+  position: absolute;
+
+  width: 260px;
+  height: 260px;
+
+  top: -120px;
+  right: -100px;
+
+  border-radius: 50%;
+
+  filter: blur(70px);
+
+  opacity: 0.55;
+
+  pointer-events: none;
+}
+
+
+/* RED */
+
+.battle-red::before {
+  background:
+    rgba(230, 25, 40, 0.32);
+}
+
+
+/* GOLD */
+
+.battle-gold::before {
+  background:
+    rgba(255, 190, 40, 0.3);
+}
+
+
+/* PURPLE */
+
+.battle-purple::before {
+  background:
+    rgba(150, 80, 255, 0.3);
+}
+
+
+/* =====================================================
+   CARD ICON
+   ===================================================== */
+
+.battle-icon {
+  position: absolute;
+
+  top: 30px;
+  left: 32px;
+
+  width: 55px;
+  height: 55px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 16px;
+
+  color: #ffffff;
+
+  font-size: 25px;
+
+  background:
+    rgba(255, 255, 255, 0.06);
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.12);
+
+  box-shadow:
+    inset 0 0 25px
+    rgba(255, 255, 255, 0.03);
+}
+
+
+/* =====================================================
+   STATUS
+   ===================================================== */
+
+.battle-status {
+  position: relative;
+
+  margin-bottom: 12px;
+
+  color:
+    rgba(255, 255, 255, 0.35);
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 2.5px;
+}
+
+
+/* =====================================================
+   TITLE
+   ===================================================== */
+
+.battle-card h3 {
+  position: relative;
+
+  margin: 0 0 15px;
+
+  font-size: 27px;
+
+  line-height: 1.05;
+
+  letter-spacing: -1px;
+
+  font-weight: 850;
+}
+
+
+/* =====================================================
+   DESCRIPTION
+   ===================================================== */
+
+.battle-card p {
+  position: relative;
+
+  margin: 0;
+
+  color:
+    rgba(255, 255, 255, 0.48);
+
+  font-size: 13px;
+
+  line-height: 1.7;
+}
+
+
+/* =====================================================
+   BATTLE LINE
+   ===================================================== */
+
+.battle-line {
+  position: relative;
+
+  width: 100%;
+
+  height: 1px;
+
+  margin: 25px 0 15px;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
+}
+
+
+/* =====================================================
+   LOCATION
+   ===================================================== */
+
+.battle-location {
+  position: relative;
+
+  color:
+    rgba(255, 255, 255, 0.25);
+
+  font-size: 8px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.8px;
+}
+
+
+/* =====================================================
+   CARD ACCENTS
+   ===================================================== */
+
+.battle-red {
+  box-shadow:
+    inset 0 2px 0 rgba(255, 40, 50, 0.65),
+    0 25px 80px rgba(0, 0, 0, 0.35);
+}
+
+
+.battle-gold {
+  box-shadow:
+    inset 0 2px 0 rgba(255, 200, 60, 0.65),
+    0 25px 80px rgba(0, 0, 0, 0.35);
+}
+
+
+.battle-purple {
+  box-shadow:
+    inset 0 2px 0 rgba(160, 100, 255, 0.65),
+    0 25px 80px rgba(0, 0, 0, 0.35);
+}
+
+
+/* =====================================================
+   HOVER ACCENTS
+   ===================================================== */
+
+.battle-red:hover {
+  box-shadow:
+    inset 0 2px 0 #ff3030,
+    0 35px 90px rgba(220, 20, 40, 0.18);
+}
+
+
+.battle-gold:hover {
+  box-shadow:
+    inset 0 2px 0 #ffd166,
+    0 35px 90px rgba(255, 190, 40, 0.15);
+}
+
+
+.battle-purple:hover {
+  box-shadow:
+    inset 0 2px 0 #9d72ff,
+    0 35px 90px rgba(150, 80, 255, 0.15);
+}
+
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 900px) {
+
+  .battles {
+    padding:
+      100px 20px;
+  }
+
+  .battle-grid {
+    grid-template-columns:
+      1fr;
+  }
+
+  .battle-card {
+    min-height: 350px;
+  }
+
+}
+
+
+@media (max-width: 480px) {
+
+  .battles-heading h2 {
+    font-size: 48px;
+
+    letter-spacing: -2px;
+  }
+
+  .battles-heading p {
+    font-size: 14px;
+  }
+
+  .battle-card {
+    padding: 28px;
+
+    min-height: 330px;
+  }
+
+}
+/* =====================================================
+   CINEMATIC BATTLE EFFECTS
+   ===================================================== */
+
+.battle-card {
+  position: relative;
+  overflow: hidden;
+
+  transition:
+    transform 0.45s ease,
+    border-color 0.45s ease,
+    box-shadow 0.45s ease;
+}
+
+
+/* BACKGROUND GLOW */
+
+.battle-card::before {
+  content: "";
+
+  position: absolute;
+
+  width: 320px;
+  height: 320px;
+
+  right: -140px;
+  top: -140px;
+
+  border-radius: 50%;
+
+  filter: blur(80px);
+
+  opacity: 0.25;
+
+  transition:
+    transform 0.5s ease,
+    opacity 0.5s ease;
+
+  pointer-events: none;
+}
+
+
+/* RED */
+
+.battle-red::before {
+  background: #e52535;
+}
+
+
+/* GOLD */
+
+.battle-gold::before {
+  background: #e4aa28;
+}
+
+
+/* PURPLE */
+
+.battle-purple::before {
+  background: #743cff;
+}
+
+
+/* HOVER */
+
+.battle-card:hover {
+  transform: translateY(-8px);
+
+  border-color:
+    rgba(255, 255, 255, 0.22);
+
+  box-shadow:
+    0 30px 80px
+    rgba(0, 0, 0, 0.55);
+}
+
+.battle-card:hover::before {
+  transform: scale(1.35);
+
+  opacity: 0.55;
+}
+
+
+/* ICON */
+
+.battle-icon {
+  position: relative;
+
+  z-index: 2;
+
+  transition:
+    transform 0.4s ease,
+    text-shadow 0.4s ease;
+}
+
+.battle-card:hover .battle-icon {
+  transform:
+    scale(1.15)
+    rotate(-8deg);
+
+  text-shadow:
+    0 0 20px
+    rgba(255, 255, 255, 0.6);
+}
+
+
+/* TEXT ABOVE EFFECT */
+
+.battle-card h3,
+.battle-card p,
+.battle-status,
+.battle-location,
+.battle-line {
+  position: relative;
+
+  z-index: 2;
+}
+
+
+/* BATTLE LINE */
+
+.battle-line {
+  transition:
+    width 0.5s ease;
+}
+
+.battle-card:hover .battle-line {
+  width: 100%;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+  .battle-card:hover {
+    transform: translateY(-4px);
+  }
+
+}
